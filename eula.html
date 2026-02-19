@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ZirbelSignal – End User License Agreement (EULA)">
+  <title>ZirbelSignal – EULA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #7C3AED;
+      --primary-dark: #6D28D9;
+      --primary-light: #A78BFA;
+      --secondary: #1a1a2e;
+      --text: #1a1a1a;
+      --text-light: #374151;
+      --bg: #ffffff;
+      --bg-alt: #f5f7fa;
+      --border: #e2e6ea;
+      --shadow: 0 2px 8px rgba(0,0,0,0.06);
+      --radius: 10px;
+      --transition: 0.25s ease;
+    }
+
+    *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* --- Language Bar --- */
+    .lang-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1100;
+      background: var(--secondary);
+      padding: 6px 0;
+      font-size: 0.8rem;
+    }
+
+    .lang-bar .container {
+      display: flex;
+      justify-content: flex-end;
+      gap: 6px;
+      max-width: 1100px;
+    }
+
+    .lang-btn {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.6);
+      padding: 3px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.78rem;
+      font-family: inherit;
+      transition: all var(--transition);
+    }
+
+    .lang-btn:hover {
+      color: #fff;
+      border-color: rgba(255,255,255,0.4);
+    }
+
+    .lang-btn.active {
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    /* --- Navbar --- */
+    .navbar {
+      position: fixed;
+      top: 32px;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(26,26,46,0.95);
+      backdrop-filter: blur(8px);
+      padding: 10px 0;
+      box-shadow: 0 1px 10px rgba(0,0,0,0.2);
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      font-weight: 500;
+      font-size: 0.82rem;
+      transition: color var(--transition);
+    }
+
+    .nav-links a:hover { color: #fff; }
+
+    /* --- Legal Page --- */
+    .legal-page {
+      padding-top: 100px;
+      padding-bottom: 60px;
+      min-height: 100vh;
+    }
+
+    .legal-page h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 6px;
+    }
+
+    .legal-subtitle {
+      color: var(--text-light);
+      margin-bottom: 36px;
+      font-size: 1rem;
+    }
+
+    .legal-page h2 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--secondary);
+      margin-top: 40px;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .legal-page h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--secondary);
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+
+    .legal-page p,
+    .legal-page li {
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    .legal-page ul { padding-left: 18px; margin-bottom: 12px; }
+    .legal-page ul li { list-style: disc; margin-bottom: 4px; }
+
+    .legal-page a { color: var(--primary); }
+    .legal-page a:hover { text-decoration: underline; }
+
+    .legal-page strong { color: var(--text); font-weight: 600; }
+
+    .contact-box {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+
+    .contact-box p { margin-bottom: 4px; }
+
+    .hint-box {
+      border-left: 3px solid var(--primary);
+      padding: 14px 18px;
+      margin: 16px 0;
+      background: var(--bg-alt);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .hint-box p { margin-bottom: 0; }
+
+    /* Language sections */
+    .content-section { display: none; }
+    .content-section.active { display: block; }
+
+    /* --- Footer --- */
+    .footer {
+      background: var(--secondary);
+      color: rgba(255,255,255,0.6);
+      padding: 32px 0;
+      font-size: 0.85rem;
+    }
+
+    .footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      max-width: 1100px;
+    }
+
+    .footer a { color: var(--primary-light); }
+    .footer a:hover { text-decoration: underline; }
+
+    /* --- Responsive --- */
+    @media (max-width: 768px) {
+      .lang-bar .container { justify-content: center; }
+      .legal-page { padding-top: 90px; }
+      .legal-page h1 { font-size: 1.3rem; }
+
+      .footer .container {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Language Bar -->
+  <div class="lang-bar">
+    <div class="container">
+      <button class="lang-btn active" data-lang="de">DE</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="fr">FR</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="it">IT</button>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">ZirbelSignal</a>
+      <div class="nav-links">
+        <a href="index.html" id="navBack">Rechtliche Informationen</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- EULA Content -->
+  <div class="legal-page">
+    <div class="container">
+
+<!-- ══════ DEUTSCH ══════ -->
+<div class="content-section active" data-lang="de">
+
+<h1>Endbenutzer-Lizenzvereinbarung (EULA)</h1>
+<p class="legal-subtitle">ZirbelSignal &ndash; Frequenz-Wellness- &amp; Entspannungs-App &middot; Stand: 19. Februar 2026</p>
+
+<p>Diese Endbenutzer-Lizenzvereinbarung (&bdquo;Vereinbarung&ldquo;) ist ein rechtsg&uuml;ltiger Vertrag zwischen Ihnen (&bdquo;Nutzer&ldquo;) und Daniel Ovadia (&bdquo;Entwickler&ldquo;, &bdquo;wir&ldquo;, &bdquo;uns&ldquo;) f&uuml;r die Nutzung der mobilen Anwendung ZirbelSignal (&bdquo;App&ldquo;).</p>
+
+<p>Durch das Herunterladen, Installieren oder Nutzen der App stimmen Sie dieser Vereinbarung zu. Falls Sie nicht zustimmen, nutzen Sie die App nicht.</p>
+
+<h2>1. Anerkennung</h2>
+<p>Diese Vereinbarung besteht ausschlie&szlig;lich zwischen Ihnen und dem Entwickler, nicht mit Apple Inc. (&bdquo;Apple&ldquo;). Der Entwickler, nicht Apple, ist allein verantwortlich f&uuml;r die App und deren Inhalte.</p>
+
+<h2>2. Lizenzumfang</h2>
+<p>Der Entwickler gew&auml;hrt Ihnen eine eingeschr&auml;nkte, nicht-exklusive, nicht &uuml;bertragbare, widerrufliche Lizenz zur Nutzung der App auf jedem Apple-Ger&auml;t, das Sie besitzen oder kontrollieren, gem&auml;&szlig; den Apple Media Services Nutzungsbedingungen.</p>
+
+<h2>3. Abonnement-Bedingungen</h2>
+
+<h3>3.1 Premium-Abonnement</h3>
+<p>Die App bietet ein optionales, sich automatisch verl&auml;ngerndes monatliches Abonnement (&bdquo;ZirbelSignal Premium&ldquo;), das unbegrenzten Zugang zu allen Funktionen und Inhalten bietet.</p>
+
+<h3>3.2 Kostenlose Nutzung</h3>
+<p>Die App bietet eine begrenzte Anzahl kostenloser Sessions, bevor ein Premium-Abonnement f&uuml;r die weitere Nutzung erforderlich ist. Der Entwickler beh&auml;lt sich das Recht vor, die Anzahl der kostenlosen Sessions jederzeit zu &auml;ndern.</p>
+
+<h3>3.3 Abrechnung</h3>
+<ul>
+  <li>Die Zahlung wird bei Best&auml;tigung des Kaufs Ihrem Apple-ID-Konto belastet.</li>
+  <li>Das Abonnement verl&auml;ngert sich automatisch jeden Monat, sofern es nicht mindestens 24 Stunden vor Ablauf des aktuellen Abrechnungszeitraums gek&uuml;ndigt wird.</li>
+  <li>Ihr Konto wird innerhalb von 24 Stunden vor Ablauf des aktuellen Zeitraums zum gleichen Preis belastet.</li>
+  <li>Der Abonnementpreis wird vor dem Kauf in der App in Ihrer Landesw&auml;hrung angezeigt.</li>
+</ul>
+
+<h3>3.4 K&uuml;ndigung</h3>
+<ul>
+  <li>Sie k&ouml;nnen Ihr Abonnement jederzeit &uuml;ber Ihre Apple-ID-Kontoeinstellungen k&uuml;ndigen (Einstellungen &gt; Apple-ID &gt; Abonnements).</li>
+  <li>Die K&uuml;ndigung wird am Ende des aktuellen Abrechnungszeitraums wirksam. Sie behalten bis dahin Zugang zu Premium-Funktionen.</li>
+  <li>F&uuml;r angefangene Abrechnungszeitr&auml;ume werden keine R&uuml;ckerstattungen gew&auml;hrt.</li>
+</ul>
+
+<h2>4. Beschreibung der App</h2>
+<p>ZirbelSignal erzeugt Klangfrequenzen und bietet Wellness- und Entspannungsinhalte, darunter:</p>
+<ul>
+  <li>Klangfrequenzen (Solfeggio, Binaural Beats, Engelsfrequenzen, Planetenfrequenzen, Schumann-Resonanz)</li>
+  <li>Gef&uuml;hrte Sessions mit Sprachf&uuml;hrung in 5 Sprachen (Deutsch, Englisch, Franz&ouml;sisch, Spanisch, Italienisch)</li>
+  <li>Atem&uuml;bungen, Yoga, Tai Chi, Meditation</li>
+  <li>Sound Bath und Klangschalen</li>
+  <li>Mantras und Affirmationen</li>
+  <li>Lokale Datenspeicherung (keine Cloud, kein Tracking, keine Analyse)</li>
+</ul>
+
+<h2>5. Wellness-Hinweis</h2>
+<div class="hint-box">
+  <p><strong>DIE APP BIETET KEINE MEDIZINISCHE BERATUNG ODER BEHANDLUNG.</strong> Die Klangfrequenzen und Inhalte der App dienen ausschlie&szlig;lich der Entspannung und dem allgemeinen Wohlbefinden. Sie sind nicht dazu bestimmt, Krankheiten oder Gesundheitszust&auml;nde zu diagnostizieren, zu behandeln, zu heilen oder zu verhindern. Sie ersetzen keine &auml;rztliche Diagnose, Beratung oder Behandlung. Bei gesundheitlichen Bedenken wenden Sie sich an einen qualifizierten Arzt. Bei Unwohlsein w&auml;hrend der Nutzung beenden Sie die Anwendung sofort.</p>
+</div>
+
+<h2>6. Datenschutz</h2>
+<p>ZirbelSignal speichert alle Daten ausschlie&szlig;lich lokal auf Ihrem Ger&auml;t. Es gibt keine Cloud-Synchronisation, kein Tracking und keine Analyse. Die App hat keinen Zugriff auf Zahlungsdaten; die gesamte Zahlungsabwicklung erfolgt &uuml;ber den Apple App Store oder Google Play Store.</p>
+
+<p>Ihre Nutzung der App unterliegt auch unserer Datenschutzerkl&auml;rung, verf&uuml;gbar unter:<br>
+<a href="https://laermprotokollapp.github.io/zirbelsignal/#datenschutz-de" target="_blank" rel="noopener">https://laermprotokollapp.github.io/zirbelsignal/#datenschutz-de</a></p>
+
+<p>Alle personenbezogenen Daten werden gem&auml;&szlig; den geltenden Datenschutzgesetzen verarbeitet, einschlie&szlig;lich der EU-Datenschutz-Grundverordnung (DSGVO). Alle lokal gespeicherten Daten k&ouml;nnen durch Deinstallation der App gel&ouml;scht werden.</p>
+
+<h2>7. Geistiges Eigentum</h2>
+<p>Alle Inhalte (Audio, Texte, Grafiken, Software) sind urheberrechtlich gesch&uuml;tzt. Sie d&uuml;rfen keinen Teil der App kopieren, ver&auml;ndern, verbreiten, verkaufen oder vermieten.</p>
+
+<h2>8. Gew&auml;hrleistungsausschluss</h2>
+<p>DIE APP WIRD &bdquo;WIE BESEHEN&ldquo; UND &bdquo;WIE VERF&Uuml;GBAR&ldquo; OHNE JEGLICHE GEW&Auml;HRLEISTUNG BEREITGESTELLT. IM MAXIMAL GESETZLICH ZUL&Auml;SSIGEN UMFANG SCHLIESST DER ENTWICKLER ALLE GEW&Auml;HRLEISTUNGEN AUS, EINSCHLIESSLICH STILLSCHWEIGENDER GEW&Auml;HRLEISTUNGEN DER MARKTG&Auml;NGIGKEIT, EIGNUNG F&Uuml;R EINEN BESTIMMTEN ZWECK UND NICHTVERLETZUNG VON RECHTEN DRITTER.</p>
+
+<h2>9. Haftungsbeschr&auml;nkung</h2>
+<p>IM MAXIMAL GESETZLICH ZUL&Auml;SSIGEN UMFANG HAFTET DER ENTWICKLER NICHT F&Uuml;R INDIREKTE, ZUF&Auml;LLIGE, BESONDERE ODER FOLGESCH&Auml;DEN ODER ENTGANGENE GEWINNE. DIE GESAMTHAFTUNG DES ENTWICKLERS &Uuml;BERSTEIGT IN KEINEM FALL DEN BETRAG, DEN SIE IN DEN ZW&Ouml;LF (12) MONATEN VOR DEM ANSPRUCH F&Uuml;R DIE APP BEZAHLT HABEN.</p>
+
+<h2>10. Wartung und Support</h2>
+<p>Der Entwickler kann nach eigenem Ermessen Updates, Fehlerbehebungen und Support bereitstellen. Apple ist nicht verpflichtet, Wartungs- oder Supportleistungen f&uuml;r die App zu erbringen.</p>
+
+<h2>11. Produktanspr&uuml;che</h2>
+<p>Der Entwickler, nicht Apple, ist verantwortlich f&uuml;r alle Anspr&uuml;che im Zusammenhang mit der App, einschlie&szlig;lich: (a) Produkthaftungsanspr&uuml;che; (b) Anspr&uuml;che wegen Nichteinhaltung gesetzlicher Anforderungen; und (c) Anspr&uuml;che aus Verbraucherschutz- oder Datenschutzgesetzen.</p>
+
+<h2>12. Geistiges Eigentum Dritter</h2>
+<p>Im Falle einer Behauptung Dritter, dass die App deren geistiges Eigentum verletzt, ist der Entwickler, nicht Apple, allein verantwortlich f&uuml;r die Untersuchung, Verteidigung, Beilegung und Erf&uuml;llung eines solchen Anspruchs.</p>
+
+<h2>13. Drittbeg&uuml;nstigter</h2>
+<p>Apple und seine Tochtergesellschaften sind Drittbeg&uuml;nstigte dieser Vereinbarung. Mit Ihrer Zustimmung hat Apple das Recht, diese Vereinbarung gegen Sie als Drittbeg&uuml;nstigter durchzusetzen.</p>
+
+<h2>14. Exportkonformit&auml;t</h2>
+<p>Sie erkl&auml;ren und gew&auml;hrleisten, dass (a) Sie sich nicht in einem Land befinden, das einem US-Embargo unterliegt oder als &bdquo;Terrorismus unterst&uuml;tzend&ldquo; eingestuft ist; und (b) Sie nicht auf einer US-Verbotsliste stehen.</p>
+
+<h2>15. Anwendbares Recht</h2>
+<p>Diese Vereinbarung unterliegt dem Recht der Bundesrepublik Deutschland. Gerichtsstand: Karlsruhe, Deutschland. F&uuml;r Verbraucher innerhalb der EU gelten zwingende Verbraucherschutzgesetze ihres Wohnsitzlandes, soweit diese einen h&ouml;heren Schutz bieten.</p>
+
+<h2>16. &Auml;nderungen dieser Vereinbarung</h2>
+<p>Der Entwickler beh&auml;lt sich das Recht vor, diese Vereinbarung jederzeit zu &auml;ndern. &Auml;nderungen werden durch Ver&ouml;ffentlichung in der App oder auf der Website des Entwicklers wirksam. Die fortgesetzte Nutzung der App nach &Auml;nderungen gilt als Zustimmung.</p>
+
+<h2>17. Salvatorische Klausel</h2>
+<p>Sollte eine Bestimmung dieser Vereinbarung unwirksam oder undurchsetzbar sein, bleiben die &uuml;brigen Bestimmungen in vollem Umfang wirksam.</p>
+
+<h2>18. Kontakt</h2>
+<div class="contact-box">
+  <p><strong>Daniel Ovadia</strong></p>
+  <p>Eugen-Richter-Str. 159, 76187 Karlsruhe, Deutschland</p>
+  <p>E-Mail: <a href="mailto:Laermprotokollprofessionell@outlook.de">Laermprotokollprofessionell@outlook.de</a></p>
+  <p>Website: <a href="https://laermprotokollapp.github.io/zirbelsignal/" target="_blank" rel="noopener">https://laermprotokollapp.github.io/zirbelsignal/</a></p>
+</div>
+
+<p style="margin-top: 24px;">
+  <strong>Nutzungsbedingungen (EULA):</strong> <a href="https://laermprotokollapp.github.io/zirbelsignal/eula.html">https://laermprotokollapp.github.io/zirbelsignal/eula.html</a><br>
+  <strong>Datenschutzerkl&auml;rung:</strong> <a href="https://laermprotokollapp.github.io/zirbelsignal/#datenschutz-de">https://laermprotokollapp.github.io/zirbelsignal/#datenschutz-de</a>
+</p>
+
+</div>
+
+<!-- ══════ ENGLISH ══════ -->
+<div class="content-section" data-lang="en">
+
+<h1>End User License Agreement (EULA)</h1>
+<p class="legal-subtitle">ZirbelSignal &ndash; Frequency Wellness &amp; Relaxation App &middot; Last updated: February 19, 2026</p>
+
+<p>This End User License Agreement (&ldquo;Agreement&rdquo;) is a legal agreement between you (&ldquo;User&rdquo;) and Daniel Ovadia (&ldquo;Developer&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) for the use of the ZirbelSignal mobile application (&ldquo;App&rdquo;).</p>
+
+<p>By downloading, installing, or using the App, you agree to be bound by this Agreement. If you do not agree, do not use the App.</p>
+
+<h2>1. Acknowledgement</h2>
+<p>This Agreement is between you and the Developer only, not with Apple Inc. (&ldquo;Apple&rdquo;). The Developer, not Apple, is solely responsible for the App and its content.</p>
+
+<h2>2. Scope of License</h2>
+<p>The Developer grants you a limited, non-exclusive, non-transferable, revocable license to use the App on any Apple-branded device that you own or control, as permitted by the Apple Media Services Terms and Conditions.</p>
+
+<h2>3. Subscription Terms</h2>
+
+<h3>3.1 Premium Subscription</h3>
+<p>The App offers an optional auto-renewable monthly subscription (&ldquo;ZirbelSignal Premium&rdquo;) that provides unlimited access to all features and content.</p>
+
+<h3>3.2 Free Usage</h3>
+<p>The App provides a limited number of free sessions before a Premium subscription is required for continued use. The Developer reserves the right to change the number of free sessions at any time.</p>
+
+<h3>3.3 Billing</h3>
+<ul>
+  <li>Payment is charged to your Apple ID account at confirmation of purchase.</li>
+  <li>The subscription automatically renews each month unless cancelled at least 24 hours before the end of the current billing period.</li>
+  <li>Your account will be charged for renewal within 24 hours prior to the end of the current period at the same price.</li>
+  <li>The subscription price is displayed in the App before purchase in your local currency.</li>
+</ul>
+
+<h3>3.4 Cancellation</h3>
+<ul>
+  <li>You may cancel your subscription at any time through your Apple ID account settings (Settings &gt; Apple ID &gt; Subscriptions).</li>
+  <li>Cancellation takes effect at the end of the current billing period. You will retain access to Premium features until then.</li>
+  <li>No refunds are provided for partial billing periods.</li>
+</ul>
+
+<h2>4. Description of the App</h2>
+<p>ZirbelSignal generates sound frequencies and provides wellness and relaxation content, including:</p>
+<ul>
+  <li>Sound frequencies (Solfeggio, Binaural Beats, Angel Frequencies, Planetary Frequencies, Schumann Resonance)</li>
+  <li>Guided sessions with voice guidance in 5 languages (German, English, French, Spanish, Italian)</li>
+  <li>Breathing exercises, Yoga, Tai Chi, Meditation</li>
+  <li>Sound Bath and Singing Bowls</li>
+  <li>Mantras and Affirmations</li>
+  <li>Local data storage (no cloud, no tracking, no analytics)</li>
+</ul>
+
+<h2>5. Wellness Disclaimer</h2>
+<div class="hint-box">
+  <p><strong>THE APP DOES NOT PROVIDE MEDICAL ADVICE OR TREATMENT.</strong> The sound frequencies and content provided by the App are intended solely for relaxation and general wellbeing purposes. They are not intended to diagnose, treat, cure, or prevent any disease or health condition. They do not replace medical diagnosis, advice, or treatment. If you have health concerns, consult a qualified healthcare professional. If you experience any discomfort while using the App, discontinue use immediately.</p>
+</div>
+
+<h2>6. Data Privacy</h2>
+<p>ZirbelSignal stores all data exclusively locally on your device. There is no cloud synchronization, no tracking, and no analytics. The App has no access to payment data; all payment processing is handled by the Apple App Store or Google Play Store.</p>
+
+<p>Your use of the App is also governed by our Privacy Policy, available at:<br>
+<a href="https://laermprotokollapp.github.io/zirbelsignal/#datenschutz-en" target="_blank" rel="noopener">https://laermprotokollapp.github.io/zirbelsignal/#datenschutz-en</a></p>
+
+<p>All personal data is processed in accordance with applicable data protection laws, including the EU General Data Protection Regulation (GDPR). All locally stored data can be deleted by uninstalling the App.</p>
+
+<h2>7. Intellectual Property</h2>
+<p>All content (audio, texts, graphics, software) is protected by copyright. You may not copy, modify, distribute, sell, or lease any part of the App.</p>
+
+<h2>8. WARRANTY DISCLAIMER</h2>
+<p>THE APP IS PROVIDED &ldquo;AS IS&rdquo; AND &ldquo;AS AVAILABLE&rdquo; WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE DEVELOPER DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
+
+<h2>9. LIMITATION OF LIABILITY</h2>
+<p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE DEVELOPER SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY. IN NO EVENT SHALL THE DEVELOPER&rsquo;S TOTAL LIABILITY EXCEED THE AMOUNT YOU PAID FOR THE APP IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM.</p>
+
+<h2>10. Maintenance and Support</h2>
+<p>The Developer may provide updates, bug fixes, and support at its sole discretion. Apple has no obligation to provide any maintenance or support services for the App.</p>
+
+<h2>11. Product Claims</h2>
+<p>The Developer, not Apple, is responsible for addressing any claims relating to the App, including but not limited to: (a) product liability claims; (b) any claim that the App fails to conform to applicable legal or regulatory requirements; and (c) claims arising under consumer protection, privacy, or similar legislation.</p>
+
+<h2>12. Third-Party Intellectual Property</h2>
+<p>In the event of a third-party claim that the App infringes that third party&rsquo;s intellectual property rights, the Developer, not Apple, will be solely responsible for the investigation, defense, settlement, and discharge of such claim.</p>
+
+<h2>13. Third-Party Beneficiary</h2>
+<p>Apple and its subsidiaries are third-party beneficiaries of this Agreement. Upon your acceptance, Apple will have the right (and will be deemed to have accepted the right) to enforce this Agreement against you as a third-party beneficiary.</p>
+
+<h2>14. Export Compliance</h2>
+<p>You represent and warrant that (a) you are not located in a country subject to a U.S. Government embargo or designated as a &ldquo;terrorist supporting&rdquo; country; and (b) you are not listed on any U.S. Government list of prohibited or restricted parties.</p>
+
+<h2>15. Governing Law</h2>
+<p>This Agreement shall be governed by the laws of the Federal Republic of Germany. Place of jurisdiction: Karlsruhe, Germany. For consumers within the European Union, mandatory consumer protection laws of your country of residence shall apply where they provide greater protection.</p>
+
+<h2>16. Changes to This Agreement</h2>
+<p>The Developer reserves the right to modify this Agreement at any time. Changes will be effective upon posting in the App or on the Developer&rsquo;s website. Continued use of the App after changes constitutes acceptance of the modified Agreement.</p>
+
+<h2>17. Severability</h2>
+<p>If any provision of this Agreement is held invalid or unenforceable, the remaining provisions shall continue in full force and effect.</p>
+
+<h2>18. Contact</h2>
+<div class="contact-box">
+  <p><strong>Daniel Ovadia</strong></p>
+  <p>Eugen-Richter-Str. 159, 76187 Karlsruhe, Germany</p>
+  <p>Email: <a href="mailto:Laermprotokollprofessionell@outlook.de">Laermprotokollprofessionell@outlook.de</a></p>
+  <p>Website: <a href="https://laermprotokollapp.github.io/zirbelsignal/" target="_blank" rel="noopener">https://laermprotokollapp.github.io/zirbelsignal/</a></p>
+</div>
+
+<p style="margin-top: 24px;">
+  <strong>Terms of Use (EULA):</strong> <a href="https://laermprotokollapp.github.io/zirbelsignal/eula.html">https://laermprotokollapp.github.io/zirbelsignal/eula.html</a><br>
+  <strong>Privacy Policy:</strong> <a href="https://laermprotokollapp.github.io/zirbelsignal/#datenschutz-en">https://laermprotokollapp.github.io/zirbelsignal/#datenschutz-en</a>
+</p>
+
+</div>
+
+<!-- ══════ FRANCAIS ══════ -->
+<div class="content-section" data-lang="fr">
+
+<h1>Contrat de licence utilisateur final (EULA)</h1>
+<p class="legal-subtitle">ZirbelSignal &ndash; Application de bien-&ecirc;tre &amp; relaxation par fr&eacute;quences &middot; Mise &agrave; jour : 19 f&eacute;vrier 2026</p>
+
+<p>Ce contrat de licence utilisateur final (&laquo; Contrat &raquo;) est un accord juridique entre vous (&laquo; Utilisateur &raquo;) et Daniel Ovadia (&laquo; D&eacute;veloppeur &raquo;, &laquo; nous &raquo;) pour l&rsquo;utilisation de l&rsquo;application mobile ZirbelSignal (&laquo; Application &raquo;).</p>
+
+<p>En t&eacute;l&eacute;chargeant, installant ou utilisant l&rsquo;Application, vous acceptez ce Contrat. Si vous n&rsquo;&ecirc;tes pas d&rsquo;accord, n&rsquo;utilisez pas l&rsquo;Application.</p>
+
+<h2>1. Reconnaissance</h2>
+<p>Ce Contrat est conclu exclusivement entre vous et le D&eacute;veloppeur, et non avec Apple Inc. (&laquo; Apple &raquo;). Le D&eacute;veloppeur, et non Apple, est seul responsable de l&rsquo;Application et de son contenu.</p>
+
+<h2>2. &Eacute;tendue de la licence</h2>
+<p>Le D&eacute;veloppeur vous accorde une licence limit&eacute;e, non exclusive, non transf&eacute;rable et r&eacute;vocable pour utiliser l&rsquo;Application sur tout appareil Apple que vous poss&eacute;dez ou contr&ocirc;lez, conform&eacute;ment aux Conditions g&eacute;n&eacute;rales des services m&eacute;dia Apple.</p>
+
+<h2>3. Conditions d&rsquo;abonnement</h2>
+
+<h3>3.1 Abonnement Premium</h3>
+<p>L&rsquo;Application propose un abonnement mensuel optionnel &agrave; renouvellement automatique (&laquo; ZirbelSignal Premium &raquo;) offrant un acc&egrave;s illimit&eacute; &agrave; toutes les fonctionnalit&eacute;s et contenus.</p>
+
+<h3>3.2 Utilisation gratuite</h3>
+<p>L&rsquo;Application offre un nombre limit&eacute; de sessions gratuites avant qu&rsquo;un abonnement Premium ne soit requis. Le D&eacute;veloppeur se r&eacute;serve le droit de modifier le nombre de sessions gratuites &agrave; tout moment.</p>
+
+<h3>3.3 Facturation</h3>
+<ul>
+  <li>Le paiement est d&eacute;bit&eacute; de votre compte Apple ID lors de la confirmation de l&rsquo;achat.</li>
+  <li>L&rsquo;abonnement se renouvelle automatiquement chaque mois sauf annulation au moins 24 heures avant la fin de la p&eacute;riode en cours.</li>
+  <li>Votre compte sera d&eacute;bit&eacute; dans les 24 heures pr&eacute;c&eacute;dant la fin de la p&eacute;riode en cours au m&ecirc;me prix.</li>
+  <li>Le prix de l&rsquo;abonnement est affich&eacute; dans l&rsquo;Application avant l&rsquo;achat dans votre devise locale.</li>
+</ul>
+
+<h3>3.4 Annulation</h3>
+<ul>
+  <li>Vous pouvez annuler votre abonnement &agrave; tout moment via les param&egrave;tres de votre Apple ID (R&eacute;glages &gt; Apple ID &gt; Abonnements).</li>
+  <li>L&rsquo;annulation prend effet &agrave; la fin de la p&eacute;riode de facturation en cours. Vous conservez l&rsquo;acc&egrave;s Premium jusqu&rsquo;&agrave; cette date.</li>
+  <li>Aucun remboursement n&rsquo;est accord&eacute; pour les p&eacute;riodes partielles.</li>
+</ul>
+
+<h2>4. Description de l&rsquo;Application</h2>
+<p>ZirbelSignal g&eacute;n&egrave;re des fr&eacute;quences sonores et propose du contenu de bien-&ecirc;tre et de relaxation :</p>
+<ul>
+  <li>Fr&eacute;quences sonores (Solfeggio, battements binauraux, fr&eacute;quences ang&eacute;liques, plan&eacute;taires, r&eacute;sonance de Schumann)</li>
+  <li>Sessions guid&eacute;es avec guidance vocale en 5 langues (allemand, anglais, fran&ccedil;ais, espagnol, italien)</li>
+  <li>Exercices de respiration, Yoga, Tai Chi, M&eacute;ditation</li>
+  <li>Bain sonore et bols chantants</li>
+  <li>Mantras et Affirmations</li>
+  <li>Stockage local des donn&eacute;es (pas de cloud, pas de suivi, pas d&rsquo;analyse)</li>
+</ul>
+
+<h2>5. Avertissement bien-&ecirc;tre</h2>
+<div class="hint-box">
+  <p><strong>L&rsquo;APPLICATION NE FOURNIT PAS DE CONSEILS NI DE TRAITEMENTS M&Eacute;DICAUX.</strong> Les fr&eacute;quences sonores et le contenu fournis par l&rsquo;Application sont destin&eacute;s uniquement &agrave; la relaxation et au bien-&ecirc;tre g&eacute;n&eacute;ral. Ils ne sont pas destin&eacute;s &agrave; diagnostiquer, traiter, gu&eacute;rir ou pr&eacute;venir une maladie. Ils ne remplacent pas un diagnostic, un conseil ou un traitement m&eacute;dical. En cas de probl&egrave;mes de sant&eacute;, consultez un professionnel qualifi&eacute;. En cas d&rsquo;inconfort, cessez imm&eacute;diatement l&rsquo;utilisation.</p>
+</div>
+
+<h2>6. Confidentialit&eacute; des donn&eacute;es</h2>
+<p>ZirbelSignal stocke toutes les donn&eacute;es exclusivement en local sur votre appareil. Il n&rsquo;y a pas de synchronisation cloud, pas de suivi et pas d&rsquo;analyse. L&rsquo;Application n&rsquo;a pas acc&egrave;s aux donn&eacute;es de paiement.</p>
+
+<p>Votre utilisation est &eacute;galement r&eacute;gie par notre politique de confidentialit&eacute; :<br>
+<a href="https://laermprotokollapp.github.io/zirbelsignal/#datenschutz-fr" target="_blank" rel="noopener">https://laermprotokollapp.github.io/zirbelsignal/#datenschutz-fr</a></p>
+
+<p>Toutes les donn&eacute;es personnelles sont trait&eacute;es conform&eacute;ment au RGPD. Toutes les donn&eacute;es locales peuvent &ecirc;tre supprim&eacute;es en d&eacute;sinstallant l&rsquo;Application.</p>
+
+<h2>7. Propri&eacute;t&eacute; intellectuelle</h2>
+<p>Tous les contenus (audio, textes, graphiques, logiciel) sont prot&eacute;g&eacute;s par le droit d&rsquo;auteur. Vous ne pouvez pas copier, modifier, distribuer, vendre ou louer une partie de l&rsquo;Application.</p>
+
+<h2>8. Exclusion de garantie</h2>
+<p>L&rsquo;APPLICATION EST FOURNIE &laquo; EN L&rsquo;&Eacute;TAT &raquo; SANS GARANTIE D&rsquo;AUCUNE SORTE. DANS LA MESURE MAXIMALE AUTORIS&Eacute;E PAR LA LOI, LE D&Eacute;VELOPPEUR EXCLUT TOUTE GARANTIE.</p>
+
+<h2>9. Limitation de responsabilit&eacute;</h2>
+<p>DANS LA MESURE MAXIMALE AUTORIS&Eacute;E PAR LA LOI, LE D&Eacute;VELOPPEUR N&rsquo;EST PAS RESPONSABLE DES DOMMAGES INDIRECTS, ACCESSOIRES, SP&Eacute;CIAUX OU CONS&Eacute;CUTIFS. LA RESPONSABILIT&Eacute; TOTALE NE D&Eacute;PASSERA PAS LE MONTANT PAY&Eacute; DANS LES DOUZE (12) MOIS PR&Eacute;C&Eacute;DANT LA R&Eacute;CLAMATION.</p>
+
+<h2>10. Maintenance et support</h2>
+<p>Le D&eacute;veloppeur peut fournir des mises &agrave; jour et du support &agrave; sa seule discr&eacute;tion. Apple n&rsquo;a aucune obligation de maintenance ou de support.</p>
+
+<h2>11. R&eacute;clamations produit</h2>
+<p>Le D&eacute;veloppeur, et non Apple, est responsable de toute r&eacute;clamation relative &agrave; l&rsquo;Application.</p>
+
+<h2>12. Propri&eacute;t&eacute; intellectuelle de tiers</h2>
+<p>En cas de r&eacute;clamation d&rsquo;un tiers pour violation de propri&eacute;t&eacute; intellectuelle, le D&eacute;veloppeur, et non Apple, en est seul responsable.</p>
+
+<h2>13. Tiers b&eacute;n&eacute;ficiaire</h2>
+<p>Apple et ses filiales sont des tiers b&eacute;n&eacute;ficiaires de ce Contrat. Apple a le droit de faire appliquer ce Contrat contre vous.</p>
+
+<h2>14. Conformit&eacute; export</h2>
+<p>Vous d&eacute;clarez ne pas vous trouver dans un pays sous embargo am&eacute;ricain et ne pas figurer sur une liste de personnes interdites.</p>
+
+<h2>15. Droit applicable</h2>
+<p>Ce Contrat est r&eacute;gi par le droit allemand. Tribunal comp&eacute;tent : Karlsruhe, Allemagne. Pour les consommateurs de l&rsquo;UE, les lois de protection des consommateurs de votre pays de r&eacute;sidence s&rsquo;appliquent si elles offrent une protection sup&eacute;rieure.</p>
+
+<h2>16. Modifications</h2>
+<p>Le D&eacute;veloppeur se r&eacute;serve le droit de modifier ce Contrat. Les modifications prennent effet d&egrave;s leur publication. L&rsquo;utilisation continue vaut acceptation.</p>
+
+<h2>17. Divisibilit&eacute;</h2>
+<p>Si une disposition est jug&eacute;e invalide, les autres restent en vigueur.</p>
+
+<h2>18. Contact</h2>
+<div class="contact-box">
+  <p><strong>Daniel Ovadia</strong></p>
+  <p>Eugen-Richter-Str. 159, 76187 Karlsruhe, Allemagne</p>
+  <p>E-mail : <a href="mailto:Laermprotokollprofessionell@outlook.de">Laermprotokollprofessionell@outlook.de</a></p>
+  <p>Site web : <a href="https://laermprotokollapp.github.io/zirbelsignal/" target="_blank" rel="noopener">https://laermprotokollapp.github.io/zirbelsignal/</a></p>
+</div>
+
+<p style="margin-top: 24px;">
+  <strong>Conditions d&rsquo;utilisation (EULA) :</strong> <a href="https://laermprotokollapp.github.io/zirbelsignal/eula.html">https://laermprotokollapp.github.io/zirbelsignal/eula.html</a><br>
+  <strong>Politique de confidentialit&eacute; :</strong> <a href="https://laermprotokollapp.github.io/zirbelsignal/#datenschutz-fr">https://laermprotokollapp.github.io/zirbelsignal/#datenschutz-fr</a>
+</p>
+
+</div>
+
+<!-- ══════ ESPANOL ══════ -->
+<div class="content-section" data-lang="es">
+
+<h1>Acuerdo de licencia de usuario final (EULA)</h1>
+<p class="legal-subtitle">ZirbelSignal &ndash; Aplicaci&oacute;n de bienestar y relajaci&oacute;n por frecuencias &middot; Fecha: 19 de febrero de 2026</p>
+
+<p>Este Acuerdo de licencia de usuario final (&laquo; Acuerdo &raquo;) es un contrato legal entre usted (&laquo; Usuario &raquo;) y Daniel Ovadia (&laquo; Desarrollador &raquo;, &laquo; nosotros &raquo;) para el uso de la aplicaci&oacute;n m&oacute;vil ZirbelSignal (&laquo; Aplicaci&oacute;n &raquo;).</p>
+
+<p>Al descargar, instalar o utilizar la Aplicaci&oacute;n, usted acepta este Acuerdo. Si no est&aacute; de acuerdo, no utilice la Aplicaci&oacute;n.</p>
+
+<h2>1. Reconocimiento</h2>
+<p>Este Acuerdo es exclusivamente entre usted y el Desarrollador, no con Apple Inc. (&laquo; Apple &raquo;). El Desarrollador, no Apple, es el &uacute;nico responsable de la Aplicaci&oacute;n y su contenido.</p>
+
+<h2>2. Alcance de la licencia</h2>
+<p>El Desarrollador le otorga una licencia limitada, no exclusiva, no transferible y revocable para usar la Aplicaci&oacute;n en cualquier dispositivo Apple que posea o controle, seg&uacute;n los T&eacute;rminos y Condiciones de los Servicios Multimedia de Apple.</p>
+
+<h2>3. Condiciones de suscripci&oacute;n</h2>
+
+<h3>3.1 Suscripci&oacute;n Premium</h3>
+<p>La Aplicaci&oacute;n ofrece una suscripci&oacute;n mensual opcional con renovaci&oacute;n autom&aacute;tica (&laquo; ZirbelSignal Premium &raquo;) que proporciona acceso ilimitado a todas las funciones y contenidos.</p>
+
+<h3>3.2 Uso gratuito</h3>
+<p>La Aplicaci&oacute;n ofrece un n&uacute;mero limitado de sesiones gratuitas antes de requerir una suscripci&oacute;n Premium. El Desarrollador se reserva el derecho de cambiar el n&uacute;mero de sesiones gratuitas en cualquier momento.</p>
+
+<h3>3.3 Facturaci&oacute;n</h3>
+<ul>
+  <li>El pago se carga a su cuenta Apple ID al confirmar la compra.</li>
+  <li>La suscripci&oacute;n se renueva autom&aacute;ticamente cada mes a menos que se cancele al menos 24 horas antes del final del per&iacute;odo actual.</li>
+  <li>Se le cobrar&aacute; dentro de las 24 horas anteriores al final del per&iacute;odo actual al mismo precio.</li>
+  <li>El precio se muestra en la Aplicaci&oacute;n antes de la compra en su moneda local.</li>
+</ul>
+
+<h3>3.4 Cancelaci&oacute;n</h3>
+<ul>
+  <li>Puede cancelar en cualquier momento a trav&eacute;s de los ajustes de su Apple ID (Ajustes &gt; Apple ID &gt; Suscripciones).</li>
+  <li>La cancelaci&oacute;n surte efecto al final del per&iacute;odo de facturaci&oacute;n actual. Mantendr&aacute; acceso Premium hasta entonces.</li>
+  <li>No se otorgan reembolsos por per&iacute;odos parciales.</li>
+</ul>
+
+<h2>4. Descripci&oacute;n de la Aplicaci&oacute;n</h2>
+<p>ZirbelSignal genera frecuencias sonoras y ofrece contenido de bienestar y relajaci&oacute;n:</p>
+<ul>
+  <li>Frecuencias sonoras (Solfeggio, binaurales, ang&eacute;licas, planetarias, resonancia Schumann)</li>
+  <li>Sesiones guiadas con gu&iacute;a de voz en 5 idiomas (alem&aacute;n, ingl&eacute;s, franc&eacute;s, espa&ntilde;ol, italiano)</li>
+  <li>Ejercicios de respiraci&oacute;n, Yoga, Tai Chi, Meditaci&oacute;n</li>
+  <li>Ba&ntilde;o sonoro y cuencos tibetanos</li>
+  <li>Mantras y Afirmaciones</li>
+  <li>Almacenamiento local de datos (sin nube, sin seguimiento, sin an&aacute;lisis)</li>
+</ul>
+
+<h2>5. Aviso de bienestar</h2>
+<div class="hint-box">
+  <p><strong>LA APLICACI&Oacute;N NO PROPORCIONA ASESORAMIENTO NI TRATAMIENTO M&Eacute;DICO.</strong> Las frecuencias sonoras y el contenido est&aacute;n destinados exclusivamente a la relajaci&oacute;n y el bienestar general. No est&aacute;n destinados a diagnosticar, tratar, curar o prevenir ninguna enfermedad. No sustituyen el diagn&oacute;stico, consejo o tratamiento m&eacute;dico. Si tiene problemas de salud, consulte a un profesional cualificado. Si experimenta molestias, deje de usar la Aplicaci&oacute;n inmediatamente.</p>
+</div>
+
+<h2>6. Privacidad</h2>
+<p>ZirbelSignal almacena todos los datos exclusivamente en local. Sin sincronizaci&oacute;n en la nube, sin seguimiento, sin an&aacute;lisis. La Aplicaci&oacute;n no tiene acceso a datos de pago.</p>
+
+<p>Su uso tambi&eacute;n se rige por nuestra Pol&iacute;tica de Privacidad:<br>
+<a href="https://laermprotokollapp.github.io/zirbelsignal/#datenschutz-es" target="_blank" rel="noopener">https://laermprotokollapp.github.io/zirbelsignal/#datenschutz-es</a></p>
+
+<p>Todos los datos personales se procesan conforme al RGPD. Todos los datos locales pueden eliminarse desinstalando la Aplicaci&oacute;n.</p>
+
+<h2>7. Propiedad intelectual</h2>
+<p>Todo el contenido est&aacute; protegido por derechos de autor. No puede copiar, modificar, distribuir, vender o alquilar ninguna parte de la Aplicaci&oacute;n.</p>
+
+<h2>8. Exclusi&oacute;n de garant&iacute;a</h2>
+<p>LA APLICACI&Oacute;N SE PROPORCIONA &laquo; TAL CUAL &raquo; SIN GARANT&Iacute;AS DE NING&Uacute;N TIPO. EN LA MEDIDA M&Aacute;XIMA PERMITIDA POR LA LEY, EL DESARROLLADOR EXCLUYE TODAS LAS GARANT&Iacute;AS.</p>
+
+<h2>9. Limitaci&oacute;n de responsabilidad</h2>
+<p>EN LA MEDIDA M&Aacute;XIMA PERMITIDA POR LA LEY, EL DESARROLLADOR NO SER&Aacute; RESPONSABLE POR DA&Ntilde;OS INDIRECTOS, INCIDENTALES, ESPECIALES O CONSECUENTES. LA RESPONSABILIDAD TOTAL NO EXCEDER&Aacute; EL MONTO PAGADO EN LOS DOCE (12) MESES ANTERIORES A LA RECLAMACI&Oacute;N.</p>
+
+<h2>10. Mantenimiento y soporte</h2>
+<p>El Desarrollador puede proporcionar actualizaciones y soporte a su discreci&oacute;n. Apple no tiene obligaci&oacute;n de mantenimiento o soporte.</p>
+
+<h2>11. Reclamaciones del producto</h2>
+<p>El Desarrollador, no Apple, es responsable de todas las reclamaciones relacionadas con la Aplicaci&oacute;n.</p>
+
+<h2>12. Propiedad intelectual de terceros</h2>
+<p>En caso de reclamaci&oacute;n de un tercero por violaci&oacute;n de propiedad intelectual, el Desarrollador, no Apple, es el &uacute;nico responsable.</p>
+
+<h2>13. Tercero beneficiario</h2>
+<p>Apple y sus filiales son terceros beneficiarios de este Acuerdo. Apple tiene el derecho de hacer cumplir este Acuerdo contra usted.</p>
+
+<h2>14. Cumplimiento de exportaci&oacute;n</h2>
+<p>Usted declara no encontrarse en un pa&iacute;s bajo embargo estadounidense ni figurar en una lista de personas prohibidas.</p>
+
+<h2>15. Legislaci&oacute;n aplicable</h2>
+<p>Este Acuerdo se rige por el derecho alem&aacute;n. Jurisdicci&oacute;n: Karlsruhe, Alemania. Para consumidores de la UE, se aplican las leyes de protecci&oacute;n al consumidor de su pa&iacute;s si ofrecen mayor protecci&oacute;n.</p>
+
+<h2>16. Modificaciones</h2>
+<p>El Desarrollador se reserva el derecho de modificar este Acuerdo. Los cambios surten efecto tras su publicaci&oacute;n. El uso continuado implica aceptaci&oacute;n.</p>
+
+<h2>17. Divisibilidad</h2>
+<p>Si alguna disposici&oacute;n es inv&aacute;lida, las dem&aacute;s permanecen vigentes.</p>
+
+<h2>18. Contacto</h2>
+<div class="contact-box">
+  <p><strong>Daniel Ovadia</strong></p>
+  <p>Eugen-Richter-Str. 159, 76187 Karlsruhe, Alemania</p>
+  <p>Email: <a href="mailto:Laermprotokollprofessionell@outlook.de">Laermprotokollprofessionell@outlook.de</a></p>
+  <p>Web: <a href="https://laermprotokollapp.github.io/zirbelsignal/" target="_blank" rel="noopener">https://laermprotokollapp.github.io/zirbelsignal/</a></p>
+</div>
+
+<p style="margin-top: 24px;">
+  <strong>Condiciones de uso (EULA):</strong> <a href="https://laermprotokollapp.github.io/zirbelsignal/eula.html">https://laermprotokollapp.github.io/zirbelsignal/eula.html</a><br>
+  <strong>Pol&iacute;tica de privacidad:</strong> <a href="https://laermprotokollapp.github.io/zirbelsignal/#datenschutz-es">https://laermprotokollapp.github.io/zirbelsignal/#datenschutz-es</a>
+</p>
+
+</div>
+
+<!-- ══════ ITALIANO ══════ -->
+<div class="content-section" data-lang="it">
+
+<h1>Contratto di licenza per l&rsquo;utente finale (EULA)</h1>
+<p class="legal-subtitle">ZirbelSignal &ndash; App di benessere e rilassamento con frequenze &middot; Data: 19 febbraio 2026</p>
+
+<p>Questo Contratto di licenza per l&rsquo;utente finale (&laquo; Contratto &raquo;) &egrave; un accordo legale tra voi (&laquo; Utente &raquo;) e Daniel Ovadia (&laquo; Sviluppatore &raquo;, &laquo; noi &raquo;) per l&rsquo;utilizzo dell&rsquo;applicazione mobile ZirbelSignal (&laquo; App &raquo;).</p>
+
+<p>Scaricando, installando o utilizzando l&rsquo;App, accettate questo Contratto. Se non siete d&rsquo;accordo, non utilizzate l&rsquo;App.</p>
+
+<h2>1. Riconoscimento</h2>
+<p>Questo Contratto &egrave; concluso esclusivamente tra voi e lo Sviluppatore, non con Apple Inc. (&laquo; Apple &raquo;). Lo Sviluppatore, non Apple, &egrave; l&rsquo;unico responsabile dell&rsquo;App e del suo contenuto.</p>
+
+<h2>2. Ambito della licenza</h2>
+<p>Lo Sviluppatore vi concede una licenza limitata, non esclusiva, non trasferibile e revocabile per utilizzare l&rsquo;App su qualsiasi dispositivo Apple di vostra propriet&agrave; o controllo, secondo i Termini e Condizioni dei Servizi Multimediali Apple.</p>
+
+<h2>3. Condizioni di abbonamento</h2>
+
+<h3>3.1 Abbonamento Premium</h3>
+<p>L&rsquo;App offre un abbonamento mensile opzionale a rinnovo automatico (&laquo; ZirbelSignal Premium &raquo;) che fornisce accesso illimitato a tutte le funzionalit&agrave; e i contenuti.</p>
+
+<h3>3.2 Utilizzo gratuito</h3>
+<p>L&rsquo;App offre un numero limitato di sessioni gratuite prima che sia richiesto un abbonamento Premium. Lo Sviluppatore si riserva il diritto di modificare il numero di sessioni gratuite in qualsiasi momento.</p>
+
+<h3>3.3 Fatturazione</h3>
+<ul>
+  <li>Il pagamento viene addebitato sul vostro account Apple ID alla conferma dell&rsquo;acquisto.</li>
+  <li>L&rsquo;abbonamento si rinnova automaticamente ogni mese salvo cancellazione almeno 24 ore prima della fine del periodo corrente.</li>
+  <li>L&rsquo;addebito avviene entro 24 ore prima della fine del periodo corrente allo stesso prezzo.</li>
+  <li>Il prezzo &egrave; visualizzato nell&rsquo;App prima dell&rsquo;acquisto nella vostra valuta locale.</li>
+</ul>
+
+<h3>3.4 Cancellazione</h3>
+<ul>
+  <li>Potete cancellare in qualsiasi momento tramite le impostazioni del vostro Apple ID (Impostazioni &gt; Apple ID &gt; Abbonamenti).</li>
+  <li>La cancellazione ha effetto alla fine del periodo di fatturazione corrente. Manterrete l&rsquo;accesso Premium fino ad allora.</li>
+  <li>Non sono previsti rimborsi per periodi parziali.</li>
+</ul>
+
+<h2>4. Descrizione dell&rsquo;App</h2>
+<p>ZirbelSignal genera frequenze sonore e offre contenuti di benessere e rilassamento:</p>
+<ul>
+  <li>Frequenze sonore (Solfeggio, binaurali, angeliche, planetarie, risonanza di Schumann)</li>
+  <li>Sessioni guidate con guida vocale in 5 lingue (tedesco, inglese, francese, spagnolo, italiano)</li>
+  <li>Esercizi di respirazione, Yoga, Tai Chi, Meditazione</li>
+  <li>Bagno sonoro e campane tibetane</li>
+  <li>Mantra e Affermazioni</li>
+  <li>Archiviazione locale dei dati (nessun cloud, nessun tracciamento, nessuna analisi)</li>
+</ul>
+
+<h2>5. Avviso sul benessere</h2>
+<div class="hint-box">
+  <p><strong>L&rsquo;APP NON FORNISCE CONSULENZA N&Eacute; TRATTAMENTO MEDICO.</strong> Le frequenze sonore e i contenuti forniti dall&rsquo;App sono destinati esclusivamente al rilassamento e al benessere generale. Non sono destinati a diagnosticare, trattare, curare o prevenire malattie. Non sostituiscono diagnosi, consulenza o trattamento medico. In caso di problemi di salute, consultate un professionista qualificato. In caso di disagio, interrompete immediatamente l&rsquo;uso.</p>
+</div>
+
+<h2>6. Privacy dei dati</h2>
+<p>ZirbelSignal memorizza tutti i dati esclusivamente in locale sul vostro dispositivo. Nessuna sincronizzazione cloud, nessun tracciamento, nessuna analisi. L&rsquo;App non ha accesso ai dati di pagamento.</p>
+
+<p>Il vostro utilizzo &egrave; anche regolato dalla nostra Informativa sulla Privacy:<br>
+<a href="https://laermprotokollapp.github.io/zirbelsignal/#datenschutz-it" target="_blank" rel="noopener">https://laermprotokollapp.github.io/zirbelsignal/#datenschutz-it</a></p>
+
+<p>Tutti i dati personali sono trattati secondo il GDPR. Tutti i dati locali possono essere eliminati disinstallando l&rsquo;App.</p>
+
+<h2>7. Propriet&agrave; intellettuale</h2>
+<p>Tutti i contenuti sono protetti dal diritto d&rsquo;autore. Non potete copiare, modificare, distribuire, vendere o noleggiare alcuna parte dell&rsquo;App.</p>
+
+<h2>8. Esclusione di garanzia</h2>
+<p>L&rsquo;APP &Egrave; FORNITA &laquo; COS&Igrave; COM&rsquo;&Egrave; &raquo; SENZA GARANZIE DI ALCUN TIPO. NELLA MISURA MASSIMA CONSENTITA DALLA LEGGE, LO SVILUPPATORE ESCLUDE TUTTE LE GARANZIE.</p>
+
+<h2>9. Limitazione di responsabilit&agrave;</h2>
+<p>NELLA MISURA MASSIMA CONSENTITA DALLA LEGGE, LO SVILUPPATORE NON SAR&Agrave; RESPONSABILE PER DANNI INDIRETTI, INCIDENTALI, SPECIALI O CONSEQUENZIALI. LA RESPONSABILIT&Agrave; TOTALE NON SUPERER&Agrave; L&rsquo;IMPORTO PAGATO NEI DODICI (12) MESI PRECEDENTI IL RECLAMO.</p>
+
+<h2>10. Manutenzione e supporto</h2>
+<p>Lo Sviluppatore pu&ograve; fornire aggiornamenti e supporto a propria discrezione. Apple non ha obblighi di manutenzione o supporto.</p>
+
+<h2>11. Reclami sul prodotto</h2>
+<p>Lo Sviluppatore, non Apple, &egrave; responsabile di tutti i reclami relativi all&rsquo;App.</p>
+
+<h2>12. Propriet&agrave; intellettuale di terzi</h2>
+<p>In caso di reclamo di terzi per violazione di propriet&agrave; intellettuale, lo Sviluppatore, non Apple, ne &egrave; l&rsquo;unico responsabile.</p>
+
+<h2>13. Terzo beneficiario</h2>
+<p>Apple e le sue filiali sono terzi beneficiari di questo Contratto. Apple ha il diritto di far valere questo Contratto nei vostri confronti.</p>
+
+<h2>14. Conformit&agrave; all&rsquo;esportazione</h2>
+<p>Dichiarate di non trovarvi in un paese sotto embargo statunitense e di non figurare in alcuna lista di persone vietate.</p>
+
+<h2>15. Legge applicabile</h2>
+<p>Questo Contratto &egrave; regolato dal diritto tedesco. Foro competente: Karlsruhe, Germania. Per i consumatori dell&rsquo;UE, si applicano le leggi di protezione dei consumatori del vostro paese se offrono maggiore protezione.</p>
+
+<h2>16. Modifiche</h2>
+<p>Lo Sviluppatore si riserva il diritto di modificare questo Contratto. Le modifiche hanno effetto dalla pubblicazione. L&rsquo;uso continuato equivale ad accettazione.</p>
+
+<h2>17. Clausola di salvaguardia</h2>
+<p>Se una disposizione &egrave; ritenuta invalida, le altre rimangono in vigore.</p>
+
+<h2>18. Contatto</h2>
+<div class="contact-box">
+  <p><strong>Daniel Ovadia</strong></p>
+  <p>Eugen-Richter-Str. 159, 76187 Karlsruhe, Germania</p>
+  <p>E-mail: <a href="mailto:Laermprotokollprofessionell@outlook.de">Laermprotokollprofessionell@outlook.de</a></p>
+  <p>Sito web: <a href="https://laermprotokollapp.github.io/zirbelsignal/" target="_blank" rel="noopener">https://laermprotokollapp.github.io/zirbelsignal/</a></p>
+</div>
+
+<p style="margin-top: 24px;">
+  <strong>Condizioni d&rsquo;uso (EULA):</strong> <a href="https://laermprotokollapp.github.io/zirbelsignal/eula.html">https://laermprotokollapp.github.io/zirbelsignal/eula.html</a><br>
+  <strong>Informativa sulla privacy:</strong> <a href="https://laermprotokollapp.github.io/zirbelsignal/#datenschutz-it">https://laermprotokollapp.github.io/zirbelsignal/#datenschutz-it</a>
+</p>
+
+</div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Daniel Ovadia &ndash; ZirbelSignal</p>
+      <p><a href="index.html" id="footerBack">Rechtliche Informationen</a></p>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      'use strict';
+
+      var backLabels = {
+        de: 'Rechtliche Informationen',
+        en: 'Legal Information',
+        fr: 'Informations l\u00e9gales',
+        es: 'Informaci\u00f3n legal',
+        it: 'Informazioni legali'
+      };
+
+      function setLang(lang) {
+        document.querySelectorAll('.content-section').forEach(function(s) {
+          s.classList.toggle('active', s.getAttribute('data-lang') === lang);
+        });
+
+        document.querySelectorAll('.lang-btn').forEach(function(b) {
+          b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+        });
+
+        document.getElementById('navBack').textContent = backLabels[lang] || backLabels['en'];
+        document.getElementById('footerBack').textContent = backLabels[lang] || backLabels['en'];
+
+        document.documentElement.lang = lang;
+        try { localStorage.setItem('zs_language', lang); } catch(e) {}
+      }
+
+      document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          setLang(this.getAttribute('data-lang'));
+        });
+      });
+
+      var saved = null;
+      try { saved = localStorage.getItem('zs_language'); } catch(e) {}
+      if (saved && backLabels[saved]) {
+        setLang(saved);
+      } else {
+        var bl = (navigator.language || 'de').slice(0, 2).toLowerCase();
+        setLang(backLabels[bl] ? bl : 'de');
+      }
+
+    })();
+  </script>
+
+</body>
+</html>
